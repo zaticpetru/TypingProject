@@ -1,14 +1,17 @@
 ﻿CREATE TABLE [dbo].[Publisher]
 (
-	PublisherID INT NOT NULL PRIMARY KEY IDENTITY,
+	ID INT NOT NULL IDENTITY
+		CONSTRAINT [PK_dboPublisher] PRIMARY KEY,
 
-	Publisher_CompetitionID INT NOT NULL FOREIGN KEY
-		REFERENCES Competition(CompetitionID)
+	CompetitionID INT NOT NULL
+		CONSTRAINT [FK_dboPublisher_Competition] FOREIGN KEY
+		REFERENCES Competition(ID)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE,
 		
-	Publisher_UserID INT FOREIGN KEY
-		REFERENCES [User](UserID)
+	UserID INT
+		CONSTRAINT [FK_dboPublisher_User] FOREIGN KEY
+		REFERENCES [User](ID)
 		ON UPDATE CASCADE
 		ON DELETE SET NULL,
 )

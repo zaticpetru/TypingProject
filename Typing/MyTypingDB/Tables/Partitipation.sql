@@ -1,15 +1,20 @@
 ﻿CREATE TABLE [dbo].[Partitipation]
 (
-	PartitipationID INT NOT NULL PRIMARY KEY,
-	Parrtitpation_CompetitionID INT NOT NULL FOREIGN KEY
-		REFERENCES Competition(CompetitionID)
+	ID INT NOT NULL
+		CONSTRAINT [PK_dboParticipation] PRIMARY KEY IDENTITY,
+
+	CompetitionID INT NOT NULL 
+		CONSTRAINT [FK_dboParticipation_Competition] FOREIGN KEY
+		REFERENCES Competition(ID)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE,
 
-	Parrtitpation_UserID INT NOT NULL FOREIGN KEY
-		REFERENCES [User](UserID)
+	UserID INT NOT NULL
+		CONSTRAINT [FK_dboParticipation_User] FOREIGN KEY
+		REFERENCES [User](ID)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE,
 
-	Score INT NOT NULL DEFAULT(0)
+	Score INT NOT NULL DEFAULT(0),
+
 )

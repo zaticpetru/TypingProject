@@ -59,6 +59,9 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Scripts" />
+    <Folder Include="Scripts\InsertDummy" />
+    <Folder Include="Scripts\SELECT" />
+    <Folder Include="Scripts\UPDATE" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\User.sql" />
@@ -70,5 +73,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="MyTypingDB.publish.xml" />
+    <None Include="Scripts\InsertDummy\DummyUsers.sql" />
+    <None Include="Scripts\SELECT\SelectUsers.sql" />
+    <None Include="Scripts\UPDATE\GenderUpdate.sql" />
+    <None Include="Scripts\InsertDummy\DummyCompetition.sql" />
+    <None Include="Scripts\SELECT\SelectCompetiton.sql" />
   </ItemGroup>
 </Project>
