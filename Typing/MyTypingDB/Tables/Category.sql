@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Category]
+(
+	CategoryID INT NOT NULL PRIMARY KEY IDENTITY,
+	[Name] VARCHAR(30) NOT NULL,
+	[Description] VARCHAR(200),
+	UsedGadget SMALLINT DEFAULT(0) NOT NULL
+)
